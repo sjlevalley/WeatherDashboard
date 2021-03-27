@@ -15,11 +15,11 @@
 }
 
 .row-2-column-1 {
-    width: 100%;
+    max-width: 40%;
 }
 
 .row-2-column-2 {
-    width: 100%;
+    min-width: 60%;
 }
 
 .row2column1row1 {
@@ -42,6 +42,3 @@
     height: 180px;
 }
 
-/* .citySearched {
-    padding-left: 10px;
-} */
