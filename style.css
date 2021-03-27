@@ -1,7 +1,7 @@
 
-.row {
+/* .row {
     border: 1px solid black;
-}
+} */
 
 .row-1 {
     height: 50px;
@@ -9,17 +9,18 @@
 }
 
 .row-2 {
-    height: 500px;
+    height: auto;
+    width: auto;
     
     margin-left: 10px;
 }
 
 .row-2-column-1 {
-    max-width: 40%;
+    max-width: 30%;
 }
 
 .row-2-column-2 {
-    min-width: 60%;
+    min-width: 70%;
 }
 
 .row2column1row1 {
