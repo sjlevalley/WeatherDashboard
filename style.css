@@ -1,0 +1,47 @@
+
+.row {
+    border: 1px solid black;
+}
+
+.row-1 {
+    height: 50px;
+    border: 1px solid black;
+}
+
+.row-2 {
+    height: 500px;
+    
+    margin-left: 10px;
+}
+
+.row-2-column-1 {
+    width: 100%;
+}
+
+.row-2-column-2 {
+    width: 100%;
+}
+
+.row2column1row1 {
+    height: 100px;
+}
+
+.row2column1row2 {
+    height: 400px;
+}
+
+.row2column2row1 {
+    height: 275px;
+}
+
+.row2column2row2 {
+    height: 225px;
+}
+
+.day {
+    height: 180px;
+}
+
+/* .citySearched {
+    padding-left: 10px;
+} */

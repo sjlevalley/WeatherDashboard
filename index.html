@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  
+
+   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+  <section class="container-fluid">
+
+
+    <!-- ################# Weather Dashboard Header ########################### -->
+    <div class="row-1 flex-row align-center text-center justify-center min-100-vh bg-dark text-white">
+     <h2>Weather Dashboard</h2>
+    </div>
+    
+    <!-- ####################### Main Section #######################################################  -->
+    <div class="row-2 flex-row align-center justify-center min-100-vh bg-light">
+      <div class="row row-cols-2">
+
+        <!-- ########### Row 2 Column 1 ################################### -->
+        <div class="col row-2-column-1">
+
+          <!-- ############ Row 1 ############  -->
+          <div class="row row2column1row1 p-2">
+            <label class="w-100">Search For A City:</label>
+            <input class="row w-50 p-2 ml-0 citySearched" placeholder="Type Any City..." style="background-color: #eee;"></input>
+
+            
+            
+          </div>
+
+          <!-- ########## Row 2 ###############  -->
+          <div class="row row2column1row2">
+            <ul class="p-2 recentSearches">UL to create List Items for Recent City Searches</ul>
+          </div>
+
+        </div>
+
+
+        <!-- ################ Row 2 Column 2 ########################### -->
+        <div class="col row-2-column-2">
+
+
+          <!-- ########### Current Day Forecast ################  -->
+          <div class="row row2column2row1">
+            <h6 class="row w-100 p-0 ml-0 currentCity">
+              <p class="col currentCity">Atlanta</p>
+              <p class="col currentDate">(current Date)</p>
+              <p class="col weatherIcon">Weather Icon</p>
+            </h6>
+
+            <div class="row w-100 p-0 ml-0 temp" style="background-color: #eee;">
+              <label class="col">Temperature: </label>
+              <input class="col" placeholder="temp">
+            </div>
+
+            <div class="row w-100 p-0 ml-0 humidity" style="background-color: #eee;">
+              <label class="col">Temperature: </label>
+              <input class="col" placeholder="humidity">
+            </div>
+
+            <div class="row w-100 p-0 ml-0 windSpeed" style="background-color: #eee;">
+              <label class="col">Temperature: </label>
+              <input class="col" placeholder="windspeed">
+            </div>
+
+            <div class="row w-100 p-0 ml-0 uvIndex" style="background-color: #eee;">
+              <label class="col">Temperature: </label>
+              <input class="col" placeholder="UV Index">
+            </div>
+            
+            <!-- <div class="row w-100 p-0 ml-0 humidity" style="background-color: #eee;">Humidity:
+            </div>
+
+            <div class="row w-100 p-0 ml-0 windSpeed" style="background-color: #eee;">Windspeed:
+            </div>
+
+            <div class="row w-100 p-0 ml-0 uvIndex" style="background-color: #eee;">UV Index:
+            </div> -->
+            
+            
+          </div>
+
+          <!-- ############# Five Day Forecast ##############  -->
+          <div class="row row2column2row2">
+            <div class="w-100 p-2 h-20  fiveDayForecast" style="background-color: #eee;">Five-Day Forecast:</div>
+              <label class="col rounded-lg bg-primary p-2 ml-2 mr-2 text-white day day-1">Day 1</label>
+              <label class="col rounded-lg bg-primary p-2 ml-2 mr-2 text-white day day-2">Day 2</label>
+              <label class="col rounded-lg bg-primary p-2 ml-2 mr-2 text-white day day-3">Day 3</label>
+              <label class="col rounded-lg bg-primary p-2 ml-2 mr-2 text-white day day-4">Day 4</label>
+              <label class="col rounded-lg bg-primary p-2 ml-2 mr-2 text-white day day-5">Day 5</label>
+          </div>
+        </div>
+        
+      </div>
+     
+      
+    </div>
+
+
+
+  </section>
+  <!-- <div class="flex-row align-center justify-center min-100-vh bg-primary">
+    <div class="col-12 col-md-9 flex-column align-center bg-light p-5">
+      <h1 class="text-primary">Library of Congress Search Engine</h1>
+
+      ################### Search Bar ##################
+
+      <form id="search-form" class="form w-100">
+        <Label>Search for a City: </Label>
+        <input id="search-input" class="form-input w-100" type="text" placeholder="Search!">
+        <select id="format-input" class="form-input w-100">
+
+          
+      </form>
+        ########### Menu for Recent Searches ##############
+      <ul>Empty Menu for Recent Searches</ul>
+    </div>
+    <div class="col-12 col-md-9 flex-column align-center bg-light p-5">
+      <h1 class="text-primary">Library of Congress Search Engine</h1>
+
+      
+    </div>
+  </div> -->
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
