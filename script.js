@@ -25,7 +25,7 @@ var day5 = $('.day-5');
 
 var pastCities = [];
 
-// renderPastCities();
+renderPastCities();
 
 console.log(pastCities);
 
@@ -44,19 +44,17 @@ function handleSearchInput(event) {
 };
 
 
-// function renderPastCities() {
+function renderPastCities() {
 
-//     var prevSearch = localStorage.getItem("City");
+    var prevSearch = JSON.parse(localStorage.getItem("City"));
     
-//     if (prevSearch) {
-//         pastCities = prevSearch;
-//         console.log(pastCities);
-//     } else {
-//         console.log("User has no searches")
-
-//     };
-    
-// };
+    if (prevSearch) {
+        pastCities = prevSearch;
+        console.log(pastCities);
+    } else {
+        
+    };
+};
 
 
 
