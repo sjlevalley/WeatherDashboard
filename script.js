@@ -63,3 +63,11 @@ searchButton.on("click", function(event) {
 });
 
 
+// ########### AutoComplete Widget #####################
+$(function () {
+    $('.citySearched').autocomplete({
+      source: pastCities,
+    });
+  });
+
+
