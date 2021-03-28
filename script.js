@@ -27,7 +27,7 @@ var pastCities = [];
 
 renderPastCities();
 
-console.log(pastCities);
+// console.log(pastCities);
 
 function handleSearchInput(event) {
    if (!citySearched.val()) {
@@ -35,10 +35,16 @@ function handleSearchInput(event) {
 
    } else {
        
-       console.log(citySearched.val());
+    //    console.log(citySearched.val());
        pastCities.push(citySearched.val());
-       console.log(pastCities);
+    //    console.log(pastCities);
        localStorage.setItem("City", JSON.stringify(pastCities));
+
+       var listItem = document.createElement("button");
+        listItem.setAttribute("class", "cities");
+        listItem.textContent = citySearched.val();
+        recentSearches.append(listItem);
+
    }
 
 };
@@ -50,7 +56,7 @@ function renderPastCities() {
     
     if (prevSearch) {
         pastCities = prevSearch;
-        console.log(pastCities);
+        // console.log(pastCities);
     } else {
         
     };
@@ -60,28 +66,44 @@ function renderPastCities() {
 
 searchButton.on("click", function(event) {
     handleSearchInput();
+    searchAPI();
 });
 
-function repopulateList() {
-    
 
+
+// ######################## Shows List of Previous Cities Searched on Page Load ########################### 
+function repopulateList() {
     for (i = 0; i < pastCities.length; i++) {
 
         var listItem = document.createElement("button");
         listItem.setAttribute("class", "cities")
         listItem.textContent = pastCities[i];
-        console.log(listItem);
+        // console.log(listItem);
         recentSearches.append(listItem);
-
-        
-        
-        
-
-
     }
 }
-
 repopulateList();
+
+
+// var cityVal = citySearched.val();
+
+
+function searchAPI() {
+
+    var APIkey = '8f8c2546cebab0c1b04d441c650feb01';
+    var cityVal = citySearched.val();
+    var locQueryUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityVal + '&appid=' + APIkey;
+
+    fetch(locQueryUrl)
+    .then(response => response.json())
+
+    .then(data => console.log(data)); 
+    // .then(data => console.log(data.list[1])); Works
+    // .then(data => console.log(data.list[1].weather[0].icon)); Works
+
+    
+}
+
 
 
 
