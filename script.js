@@ -62,6 +62,29 @@ searchButton.on("click", function(event) {
     handleSearchInput();
 });
 
+function repopulateList() {
+    
+
+    for (i = 0; i < pastCities.length; i++) {
+
+        var listItem = document.createElement("button");
+        listItem.setAttribute("class", "cities")
+        listItem.textContent = pastCities[i];
+        console.log(listItem);
+        recentSearches.append(listItem);
+
+        
+        
+        
+
+
+    }
+}
+
+repopulateList();
+
+
+
 
 // ########### AutoComplete Widget #####################
 $(function () {
