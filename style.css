@@ -44,8 +44,13 @@
 }
 
 .cities {
-    width: 60%;
+    width: 100%;
     margin: 1px;
+    border: 1px solid lightgray;
+    text-align: left;
+    padding-left: 10px;
+    color: gray;
+    height: 40px;
 }
 
 .currentDate {
@@ -59,4 +64,5 @@
     padding: 5px;
     border-radius: 10px;
 }
+
 

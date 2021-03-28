@@ -123,7 +123,10 @@ function searchAPI() {
     //    ############################## Current City ######################################
         
         currentCity.text(data.city.name);
-        currentDate.text(data.list[0].dt_txt);
+        var currentMoment = moment().format("(M/DD/YYYY)");  
+        // currentDate.text(data.list[0].dt_txt.slice(0,10));
+        currentDate.text(currentMoment);
+        
 
 
 
@@ -141,7 +144,7 @@ function searchAPI() {
 
 
         // ################ Forecast Days ########################################################################
-        day1.children()[0].textContent = data.list[4].dt_txt
+        day1.children()[0].textContent = data.list[4].dt_txt.slice(0,10)
        
 
         var forecast1Icon = 'https://openweathermap.org/img/wn/' + data.list[4].weather[0].icon + '.png';
@@ -152,7 +155,7 @@ function searchAPI() {
         day1.children()[3].textContent = "Humidity: " + data.list[4].main.humidity + "%"
 
 
-        day2.children()[0].textContent = data.list[12].dt_txt
+        day2.children()[0].textContent = data.list[12].dt_txt.slice(0,10)
         var forecast2Icon = 'https://openweathermap.org/img/wn/' + data.list[12].weather[0].icon + '.png';
         var img2 = document.createElement('img');
         img2.setAttribute("src", forecast2Icon);
@@ -161,7 +164,7 @@ function searchAPI() {
         day2.children()[3].textContent = "Humidity: " + data.list[12].main.humidity + "%"
 
 
-        day3.children()[0].textContent = data.list[20].dt_txt
+        day3.children()[0].textContent = data.list[20].dt_txt.slice(0,10)
         var forecast3Icon = 'https://openweathermap.org/img/wn/' + data.list[20].weather[0].icon + '.png';
         var img3 = document.createElement('img');
         img3.setAttribute("src", forecast3Icon);
@@ -170,7 +173,7 @@ function searchAPI() {
         day3.children()[3].textContent = "Humidity: " + data.list[20].main.humidity + "%"
 
 
-        day4.children()[0].textContent = data.list[28].dt_txt
+        day4.children()[0].textContent = data.list[28].dt_txt.slice(0,10)
         var forecast4Icon = 'https://openweathermap.org/img/wn/' + data.list[28].weather[0].icon + '.png';
         var img4 = document.createElement('img');
         img4.setAttribute("src", forecast4Icon);
@@ -179,7 +182,7 @@ function searchAPI() {
         day4.children()[3].textContent = "Humidity: " + data.list[28].main.humidity + "%"
 
 
-        day5.children()[0].textContent = data.list[36].dt_txt
+        day5.children()[0].textContent = data.list[36].dt_txt.slice(0,10)
         var forecast5Icon = 'https://openweathermap.org/img/wn/' + data.list[36].weather[0].icon + '.png';
         var img5 = document.createElement('img');
         img5.setAttribute("src", forecast5Icon);
