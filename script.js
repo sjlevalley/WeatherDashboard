@@ -39,15 +39,18 @@ function handleSearchInput(event) {
     } else {
 
         pastCities.push(citySearched.val());
-        localStorage.setItem("City", JSON.stringify(pastCities));
 
-        var listItem = document.createElement("button");
-        listItem.setAttribute("class", "cities");
-        listItem.textContent = citySearched.val();
-        recentSearches.append(listItem);
+        var newCities = [...new Set(pastCities)];
 
+        
 
-    }
+        localStorage.setItem("City", JSON.stringify(newCities));
+
+        };
+
+    
+
+    
 
 };
 
@@ -57,11 +60,17 @@ function renderPastCities() {
     var prevSearch = JSON.parse(localStorage.getItem("City"));
 
     if (prevSearch) {
-        pastCities = prevSearch;
+        pastCities = [...new Set(prevSearch)];
     } else {
 
     };
 };
+
+
+recentSearches.on("click", function(event) {
+    citySearched.val((event.target).textContent);
+})
+
 
 
 
@@ -70,6 +79,7 @@ searchButton.on("click", function (event) {
 
     handleSearchInput();
     searchAPI();
+    
 
 });
 
@@ -77,13 +87,16 @@ searchButton.on("click", function (event) {
 
 // ################### Shows List of Previous Cities Searched on Page Load ############ 
 function repopulateList() {
-    for (i = 0; i < pastCities.length; i++) {
+
+    
+    var newCities = [...new Set(pastCities)];
+
+    for (i = 0; i < newCities.length; i++) {        
 
         var listItem = document.createElement("button");
         listItem.setAttribute("class", "cities");
         listItem.setAttribute("style", "background-color: white");
-        listItem.textContent = pastCities[i];
-
+        listItem.textContent = newCities[i];
         recentSearches.append(listItem);
     }
 }
@@ -226,5 +239,9 @@ $(function () {
         source: pastCities,
     });
 });
+
+
+
+
 
 
