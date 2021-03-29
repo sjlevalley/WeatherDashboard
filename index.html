@@ -23,52 +23,53 @@
 
 
     <!-- ################# Weather Dashboard Header ########################### -->
+    
     <div class="row-1 flex-row align-center text-center justify-center min-100-vh bg-dark text-white">
      <h2>Weather Dashboard</h2>
     </div>
     
     <!-- ####################### Main Section #######################################################  -->
+
     <div class="row-2 flex-row align-center justify-center min-100-vh bg-light">
       
       <div class="row row-cols-2">
 
         <!-- ########### Row 2 Column 1 ################################### -->
+
         <div class="col row-2-column-1">
 
           <!-- ############ Row 1 ############  -->
+
           <div class="row row2column1row1 p-2">
             
-            
-
             <label class="w-100">Search For A City: </label>
             <input class="row w-75 p-2 ml-0 citySearched" placeholder="Type Any City..." style="background-color: #eee;">
             <button class="btn btn-outline-secondary bg-primary searchButton" type="button" id="searchButton"><i
               class="fa fa-search text-white"></i></button>
           
-            
-
           </div>
 
-          <!-- ########## Row 2 ###############  -->
+          <!-- ########## Row 2 - UL for Recent Searches ###############  -->
+
           <div class="row row2column1row2">
 
             <ul class="p-2 recentSearches">Previous Cities Searched: <br></ul>
-            
-
           </div>
 
         </div>
 
-
         <!-- ################ Row 2 Column 2 ########################### -->
+
         <div class="col row-2-column-2">
 
 
           <!-- ########### Current Day Forecast ################  -->
+
           <div class="row row2column2row1">
-            <h3 class="row w-auto p-0 ml-0">
-              <h4 class="col w-auto currentCity"></h4>
-              <h4 class="col w-auto currentDate"></h4>
+
+            <h3 class="row w-75 p-0 ml-0">
+              <p class="col w-auto currentCity"></p>
+              <p class="col w-auto currentDate"></p>
               <p class="col w-auto weatherIcon"></p>
             </h3>
 
@@ -86,15 +87,13 @@
 
             <div class="row w-100 p-0 ml-0 uvIndex" style="background-color: #eee;">
               <label class="col w-auto">UV Index: <span class="uvIndexText"></span> </label>
-              
             </div>
-            
-           
-            
-            
+
           </div>
 
+
           <!-- ############# Five Day Forecast ##############  -->
+
           <div class="row row2column2row2">
             <div class="w-100 p-2 h-20  fiveDayForecast" style="background-color: #eee;">Five-Day Forecast:</div>
 
@@ -128,18 +127,13 @@
                 <li class="row p-0 ml-0 mr-0 mt-2 mb-2 forecastTemp">Temp</li>
                 <li class="row p-0 ml-0 mr-0 mt-2 mb-2 forecastHumidity">Humidity</li>
               </ul>
-              
-                
-              
+  
           </div>
         </div>
         
       </div>
      
-      
     </div>
-
-
 
   </section>
  

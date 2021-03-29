@@ -31,7 +31,7 @@ var pastCities = [];
 renderPastCities();
 
 
-
+    // ####################### Function to Handle Search Input ######################
 function handleSearchInput(event) {
     if (!citySearched.val()) {
         alert("Please Enter A City Name");
@@ -51,7 +51,7 @@ function handleSearchInput(event) {
 
 };
 
-
+// ####################### Function to Render Past Cities List #########################
 function renderPastCities() {
 
     var prevSearch = JSON.parse(localStorage.getItem("City"));
@@ -65,7 +65,7 @@ function renderPastCities() {
 
 
 
-
+//  ###################### Search Button Click Event Handler #########################
 searchButton.on("click", function (event) {
 
     handleSearchInput();
@@ -75,7 +75,7 @@ searchButton.on("click", function (event) {
 
 
 
-// ######################## Shows List of Previous Cities Searched on Page Load ########################### 
+// ################### Shows List of Previous Cities Searched on Page Load ############ 
 function repopulateList() {
     for (i = 0; i < pastCities.length; i++) {
 
@@ -114,13 +114,13 @@ day5.children()[1].append(img5);
 var lat = 0;
 var lon = 0;
 
+// ############################ Fetch Data from API #######################################
 
 function searchAPI() {
 
     var APIkey = '8f8c2546cebab0c1b04d441c650feb01';
     var cityVal = citySearched.val();
     var locQueryUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityVal + '&units=imperial' + '&appid=' + APIkey;
-
 
     fetch(locQueryUrl)
         .then(function (response) {
@@ -132,11 +132,7 @@ function searchAPI() {
             var lat = data.city.coord.lat;
             var lon = data.city.coord.lon;
 
-
-
-
             var uvIndexSearch = 'https://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=' + APIkey;
-
 
 
             //    ############################## Current City ######################################
@@ -144,68 +140,59 @@ function searchAPI() {
             currentCity.text(data.city.name);
             var currentMoment = moment().format("(M/DD/YYYY)");
             currentDate.text(currentMoment);
-
             var currentIcon = 'https://openweathermap.org/img/wn/' + data.list[0].weather[0].icon + '.png';
-            // var img = document.createElement('img');
-            // weatherIcon.append(img);
             img.setAttribute("src", currentIcon);
-            // weatherIcon.append(img);
-            // weatherIcon.attr("src", currentIcon);
             tempText.text(data.list[0].main.temp + "°F");
             humidityText.text(data.list[0].main.humidity + "%");
             windSpeedText.text(data.list[0].wind.speed + " MPH");
 
 
 
-            // ################ Forecast Days ########################################################################
-            day1.children()[0].textContent = data.list[4].dt_txt.slice(0, 10)
+            // ################ Forecast Days #######################################################################
 
-            var forecast1Icon = 'https://openweathermap.org/img/wn/' + data.list[4].weather[0].icon + '.png';
-            // var img1 = document.createElement('img');
-            img1.setAttribute("src", forecast1Icon);
-            // day1.children()[1].append(img1);
+            // ############## Day 1 ################
+
+            day1.children()[0].textContent = data.list[4].dt_txt.slice(0, 10)
+            var forecast1Icon = 'https://openweathermap.org/img/wn/' + data.list[4].weather[0].icon + '.png';   
+            img1.setAttribute("src", forecast1Icon);     
             day1.children()[2].textContent = "Temp: " + data.list[4].main.temp + "°F"
             day1.children()[3].textContent = "Humidity: " + data.list[4].main.humidity + "%"
 
+            // ############## Day 2 ################
 
             day2.children()[0].textContent = data.list[12].dt_txt.slice(0, 10)
             var forecast2Icon = 'https://openweathermap.org/img/wn/' + data.list[12].weather[0].icon + '.png';
-            // var img2 = document.createElement('img');
             img2.setAttribute("src", forecast2Icon);
-            // day2.children()[1].append(img2);
             day2.children()[2].textContent = "Temp: " + data.list[12].main.temp + "°F"
             day2.children()[3].textContent = "Humidity: " + data.list[12].main.humidity + "%"
 
+            // ############## Day 3 ################
 
             day3.children()[0].textContent = data.list[20].dt_txt.slice(0, 10)
             var forecast3Icon = 'https://openweathermap.org/img/wn/' + data.list[20].weather[0].icon + '.png';
-            // var img3 = document.createElement('img');
-            // day3.children()[1].append(img3);
             img3.setAttribute("src", forecast3Icon);
             day3.children()[2].textContent = "Temp: " + data.list[20].main.temp + "°F"
             day3.children()[3].textContent = "Humidity: " + data.list[20].main.humidity + "%"
 
+            // ############## Day 4 ################
 
             day4.children()[0].textContent = data.list[28].dt_txt.slice(0, 10)
             var forecast4Icon = 'https://openweathermap.org/img/wn/' + data.list[28].weather[0].icon + '.png';
-            // var img4 = document.createElement('img');
-            // day4.children()[1].append(img4);
             img4.setAttribute("src", forecast4Icon);
             day4.children()[2].textContent = "Temp: " + data.list[28].main.temp + "°F"
             day4.children()[3].textContent = "Humidity: " + data.list[28].main.humidity + "%"
 
+            // ############## Day 5 ################
 
             day5.children()[0].textContent = data.list[36].dt_txt.slice(0, 10)
             var forecast5Icon = 'https://openweathermap.org/img/wn/' + data.list[36].weather[0].icon + '.png';
-            // var img5 = document.createElement('img');
-            // day5.children()[1].append(img5);
             img5.setAttribute("src", forecast5Icon);
             day5.children()[2].textContent = "Temp: " + data.list[36].main.temp + "°F"
             day5.children()[3].textContent = "Humidity: " + data.list[36].main.humidity + "%"
 
 
 
-
+            // #################### UV Index Fetch from API ############################
 
             fetch(uvIndexSearch)
                 .then(function (response) {
@@ -226,31 +213,14 @@ function searchAPI() {
                     } else if (data.value >= 8) {
                         uvIndexText.attr("style", "background-color: darkred");
                     };
-                    
-
-
-
                     });
-                    
-
-
                 });
-
-
 
         }
 
 
-
-
-
-
-
-
-
-
-
 // ########### AutoComplete Widget #####################
+
 $(function () {
     $('.citySearched').autocomplete({
         source: pastCities,

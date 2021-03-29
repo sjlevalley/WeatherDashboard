@@ -58,6 +58,10 @@
     
 }
 
+.currentCity {
+    width: 50%;
+}
+
 .uvIndexText {
     color: black;
     margin: 10px;
