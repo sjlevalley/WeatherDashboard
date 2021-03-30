@@ -43,6 +43,11 @@
     height: 180px;
 }
 
+img {
+    background-color: gray;
+    border-radius: 15px;
+}
+
 .cities {
     width: 100%;
     margin: 1px;
