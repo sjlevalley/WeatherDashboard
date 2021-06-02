@@ -1,5 +1,6 @@
-
 # WeatherDashboard
+
+![App Screenshot](WeatherDash.png "Description")
 
 The purpose of this project is to create a Weather Dashboard for the user to view the current weather and 5 day forecast for a city of the user's choosing.
 
